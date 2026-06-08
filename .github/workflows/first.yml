@@ -1,22 +1,20 @@
 name: first # workflow name
 on: [push] # events
-
-# jobs - atleast have 1 job and each job must have a unique identifier
+# jobs - at least have 1 job and each job must have a unique identifier
 jobs:
   job1:
     name: First Job
     runs-on: ubuntu-latest # computer resources where job runs on
     steps:
       - name: Step one
-          uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Step two
-      run: env | sort
-
+        run: env | sort
   job2:
     name: Second Job
     runs-on: windows-latest
     steps:
       - name: Step one
-          uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Step two
-      run: "Get-ChildItem Env: | Sort-Object Name"
+        run: "Get-ChildItem Env: | Sort-Object Name"
